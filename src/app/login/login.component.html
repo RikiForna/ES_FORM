@@ -1,0 +1,67 @@
+<body>
+  <form novalidate [formGroup]="loginForm" class="card-body cardbody-color p-lg-5">
+  <div class="container" *ngIf="isLoginPage">
+      <div class="row">
+        <div class="col-md-6 offset-md-3">
+          <h2 class="text-center text-dark mt-5">Forna's SHOP</h2>
+          <div class="text-center mb-5 text-dark">AutoNoleggio</div>
+          <div class="card my-5" id="corpo">
+  
+              <div class="text-center">
+                <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAARMAAAC3CAMAAAAGjUrGAAAAhFBMVEUGBwn///8AAAAMDQ/f39+Ojo4AAAReXl6xsbHo6Oh9fX3x8fH5+fnY2NgAAgWjo6O5ubnNzc1tbW3u7u5LS0vAwMDMzMxYWFmqqqrT09M4ODn19fUXFxhkZGQkJSWUlJRPT1BEREWHh4cdHh+Tk5M7PDwwMDFycnIpKiqcnJ2IiIkSExVUgOypAAAH4klEQVR4nO2c62KiOhCAzYhUEFHBekGtl661tu//foeQC8HRyuk2BLvz/dpDbXfznWRmMgntdIgLuq7/AS2EnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAmGnGDICYacYMgJhpxgyAnmwZz4ILH5lzyWE4DNYuh54/DVppWHcgJPHmPpijE2OFuU8khOoMfYNlu/b5a5leGbNSkP5AQSxuYimvRzKcGrLSmP5GTARkIDAJ8pz7/BCdwirvXdO8ZepAZ4yp2wqSUpzTgRKfRzn3xsR/3x82Q5zFlOnseL0fbw9Ma/6N/7GXBmqZIQQ5A7GT+uEz7i+Xbssdt4/dNdK7BgnpYgIsp9kd/CuhOAt/PwCx2K6F52hRNj+iM8BTG2tjNRLDsBSPT8WC2fZ6tSwp6vpuzU14+Cly+H6ANjE1XBwoF/h6V0bNcJZNJI2t+IcHrQy0VHWP0o6H45Rp6L0/Ou+Iz4puwBnfDpzunvVRD1Qa2jMkCKJMJZ3Fk9TwEPIsUft/zzlioUm04gFKNfl5EiLioLTlKOB57ls8HXq4fHpqlwW3zLKn64GAubInaezNgJ3UCGVCMWqOnEy9R7P1MoiSHNPz17uFwMLzx6RtVhwlGOfmgUarwaE5xqjlIst97jORlfGaXIoTkjc/LMlZNNXSczi+HEnhPIqpFUPp3J0T+ZTnTmqVmti8V2JyJ/H3tOFnzl7C+mSVdWI6kZTXWMDT5rDRP2RQvl4fbFfrEjWV5Ok6kcvfkF6Azk036dUfqwSy8S1w9jywm8lVHQ13tfGMnRm+FRpmzGS9u7Pzf/WR8R/+yfx+uziURc/L/0P2fBMuQZuaxOdkYmhqBeySZ2k4ko+rb1GgzfwpqTDz10fz1LeQfI78CnChwdw8lCrye43WIpWM/Pwl+aWFRiz0mvDLEA3V6RfcXkYWaLDESVziuWPOxC37vF0POCVMWdO/XuX2LNSWguEeCBBOKi68EJ9XNRxfCsnW8AY4jYXVb9o93jHXtOppXcwENuPhS5S46OcjG8bWXK8ZJinPHpHNxyIYTMwhfLRiw66UZFJFT/+ckLslcVTnbz+SbsLQI5LWaJ6snm41X9lOAUag68gvHCZP9q+QiwwF7NVgxDhUK+QTGSbgV+qFducGEiH48q4XXBBTchpGPTydFcPHkk8UDXq1UmlRyi1le1JuPR2d4h1wUW94BnpgtwLihfH3JZrKZZlk3LNqRZwJVhttKAznc4UVNKLDoRWWZQnNztVnwpvMnRiraj7q4xZmxz9OPqtiAXbO2IC2Gxp+SL+OH1+/ly+ICOrkTOYu6MtROjgC1mV/kh/Xgf1ij8fwi7/VjYFtFhsOCnDrpPILokOgsxsxOi+7U7uPhRjSmx3bfnNUjmg9jsyNEOZHteV3BGhwnWMpw0Fz0w1s+8fH0ko7ppE5WLjtpJpCaKbs1WokeTk6TT5Bm63ut96Ekx01JURNEfqjQTTsNanZWfokEnqvDQkaLsTevjK903MIoRfmD+O52ACidpWaJBeZAs1gpkMpwMzP7Kqdq+tU5zTlRhP75SjDB5tKM/1C+r+m4YWTstv05zTtScMAsP3XfjBz5gdKtn55GgPxF9XYstJERjd3I+1OBnRhIRBx5q/oAPKbvK+bflHb4A9otygFtjw1+qymXtdVv/Elu3tK5j3wnshl5Q6Z+lnlcWaaPyebRUS2fYVzzzpZPWO/f5KRpwMmMY46bF6UpnbW6E2Im9w/IbNODk0EP82Zu5dj5aeunKdGIesCeMHX6bk+vnE8bXiyOx1/fsmKlMPDFTU8I7ufb/lQYtuTMsLote6xPAfDLu2rl7c4uWOCnQ1f/xYgPYrJI2OYE3GVOiRis0TJucJHKaNNdlvE6bnKgeU8NpBtEeJ7HuE1i7bFOT9jiBvSx2A8fhpE1OwpaEk/Y4ifWhaKM9tWu4d6IqW31xeNx8RVLFrRNevn7mVf1+mpQnYNHm/WXtUopLJ7mQ6Wh59cLJ1uX6cegEOoeb734120S6wJkT0I2TYNwLk82TSd075nZw5URdZBuMdndaCc3jyAl8Fh37aLuu+SZtk7hxIl6aZsvM8Yy4jiMnC1mIOPnb7+HEiTj/m7VUiRMncXEmuHpvqRInTsQ0sfhixV/ixAlPw1Frp4kLJ37Ri5b3Gp0XI1dw4ASOvHkkTkchGW1bN2FcOCkutolXM2DAqu+QtgEXTooQK66Ox5A9t06Ks3kir9PHxas9dt9R+r+4cLKvHFjwi27hv+7Ejyu/+CfO05Ctt+y/h5P6hB9uearnChDRPJGLR/WNeHhp7NWcWrjZA/JtcbCWL5Uum76HdA83Tor7XMPid5Dlaefer4JpGlc9JR5SVouneeixwNKvRfo2rnqPMJ+J4+HBOW6ZEpd9++zU2x42tAc0aUOL/iruz4vbBznBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBkBMMOcGQEww5wZATDDnBdP8DD6ZJNNoXjHoAAAAASUVORK5CYII=" class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+                  width="200px" alt="profile">
+              </div>
+  
+              <div class="mb-3">
+                <input type="text" class="form-control" id="name"
+                name="name"
+                formControlName="name"
+                aria-describedby="emailHelp"
+                  placeholder="User Name" 
+                  [ngClass]="{
+                    'is-invalid': loginForm.controls['name'].invalid &&
+                                loginForm.controls['name'].dirty,
+                    'is-valid': loginForm.controls['name'].valid &&
+                                loginForm.controls['name'].dirty
+                }">
+                  <div *ngIf="loginForm.controls['name'].errors &&
+                  loginForm.controls['name'].dirty"
+          class="invalid-feedback">
+                  <p *ngIf="loginForm.controls['name'].errors['required']">
+                    * Campo obbligatorio</p>   
+                    </div>
+              </div>
+                           
+              <div class="mb-3">
+                  <input type="password" class="form-control"
+                      id="password"placeholder="Password" formControlName="pwd" 
+                      [ngClass]="{
+                          'is-invalid': loginForm.controls['pwd'].invalid &&
+                                      loginForm.controls['pwd'].dirty,
+                          'is-valid': loginForm.controls['pwd'].valid &&
+                                      loginForm.controls['pwd'].dirty
+                      }">
+                  <div *ngIf="loginForm.controls['pwd'].errors &&
+                              loginForm.controls['pwd'].dirty"
+                      class="invalid-feedback">
+                  <p *ngIf="loginForm.controls['pwd'].errors['required']">
+                      * Campo obbligatorio</p>
+                  <p *ngIf="loginForm.controls['pwd'].errors['pattern']">
+                      La password deve contenere almeno 8 caratteri con almeno una lettera maiuscola, una minuscola, un numero e un carattere speciale tra @$!%*?&</p>
+                  </div>
+              </div>
+
+              <div class="text-center"><button type="submit" class="btn btn-color px-5 mb-5 w-100" (click)="login()">Login</button></div>
+              <div id="emailHelp" class="form-text text-center mb-5 text-dark">Not
+                Registered? <a  class="text-dark fw-bold" (click)="showRegisterPage()"> Create an
+                  Account</a>
+              </div>
+            
+          </div>
+  
+        </div>
+      </div>
+    </div>
+  </form>
+</body>
+

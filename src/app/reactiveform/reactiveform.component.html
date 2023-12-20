@@ -1,0 +1,49 @@
+<div class="container">
+  
+    <div class="row" style="justify-content: space-around;">
+        <div class="card-mod" style="width: 16rem; margin: 16px; padding: 0;" *ngFor="let dato of dati">
+            <div class="card-image">
+                <img src="../../assets/img/{{dato.marca}}.jpg" />
+            </div>
+            <div class="card-heading">
+                {{dato.marca}} {{dato.modello}}
+            </div>
+            <div class="card-text">
+                Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum alias quaerat debitis vero fugiat error reiciendis ut sed facilis!
+            </div>
+            <div class="card-text">
+                €{{dato.costo}}
+            </div>
+            <div href="#" class="btn card-button bg-warning" (click)="inviaDatiAlServer(dato)"><b>Vedi Auto</b></div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal per visualizzare i dati delle auto-->
+<div class="modal modal-background" tabindex="-1" [ngStyle]="{'display':display}">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">{{automobili.marca}} {{automobili.modello}}</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" (click)="chiudiModal()"></button>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="col-md-5">
+                        <img src="../../assets/img/{{automobili.marca}}.jpg" class="img-fluid rounded-start" alt="...">
+                    </div>
+                    <div class="col-md-7">
+                        <p><b>Categoria:</b> {{automobili.categoria}}</p>
+                        <p><b>Alimentazione:</b> {{automobili.alimentazione}}</p>
+                        <p><b>Potenza:</b> {{automobili.dat_tecnici.potenza}}cv</p>
+                        <p><b>Consumi:</b> {{automobili.dat_tecnici.consumi}}km/l</p>
+                        <div class="modal-footer">
+                            <p>Costo: <b>{{automobili.costo}}€</b></p>
+                            <button type="button" class="btn btn-warning text-black" (click)="compraAutomobile()"><b>Compra</b></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
